@@ -1,0 +1,9 @@
+services:
+  escape-room:
+    build: .
+    image: escape-room:latest
+    container_name: escape-room
+    restart: unless-stopped
+    ports:
+      # host:container — open de site op http://<server-ip>:8088
+      - "8088:80"
