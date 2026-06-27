@@ -2,6 +2,9 @@ services:
   escape-room:
     build: .
     image: escape-room:latest
+    # image wordt lokaal gebouwd, niet uit een registry getrokken —
+    # voorkomt "pull access denied" bij een re-pull/redeploy
+    pull_policy: build
     container_name: escape-room
     restart: unless-stopped
     ports:
