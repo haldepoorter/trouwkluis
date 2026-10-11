@@ -10,3 +10,8 @@ services:
     ports:
       # host:container — open de site op http://<server-ip>:8088
       - "8088:80"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
